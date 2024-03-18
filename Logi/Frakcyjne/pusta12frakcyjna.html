@@ -1,0 +1,3445 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mrucznik™ Role Play - 『』ig-ooc-pusta12frakcyjna</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/696491021814464522/a_de42b58dca91759735a7ae53eda84f61.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">Mrucznik™ Role Play</div>
+        <div class="preamble__entry">Frakcyjne / 『』ig-ooc-pusta12frakcyjna</div>
+
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">10-Apr-20 07:42 AM</span>
+
+            <div class="chatlog__message " data-message-id="698135757935738955" id="message-698135757935738955">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Kellan_Campbell: test )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698136589724942386" id="message-698136589724942386">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Kellan_Campbell: . )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698136607496208434" id="message-698136607496208434">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Darin_Campbell: Sex )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698136611266756708" id="message-698136611266756708">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: . )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">10-Apr-20 08:16 AM</span>
+
+            <div class="chatlog__message " data-message-id="698144377511477268" id="message-698144377511477268">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: I tyle, jak coś to dawaj o 20, ze skin&#243;w frakcyjnych nie musisz korzystać )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144512832307231" id="message-698144512832307231">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( True Gangster [3] Ami_Lerato: na fo mialo byc )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144525310230600" id="message-698144525310230600">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( True Gangster [3] Ami_Lerato: XD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144555567939624" id="message-698144555567939624">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Ok xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144611767681107" id="message-698144611767681107">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Zara wywale i sie skonczy  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144672836747305" id="message-698144672836747305">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: umcia umcia )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144673679671377" id="message-698144673679671377">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( True Gangster [3] Ami_Lerato: no dobra to pa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144693556609037" id="message-698144693556609037">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: żartowałem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144707406200922" id="message-698144707406200922">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Kellan_Campbell: ;*  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698144915149815838" id="message-698144915149815838">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: . )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698145044728905749" id="message-698145044728905749">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Dawaj Syle jeszcze do nas xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">10-Apr-20 02:15 PM</span>
+
+            <div class="chatlog__message " data-message-id="698234604150194327" id="message-698234604150194327">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: . )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">10-Apr-20 04:36 PM</span>
+
+            <div class="chatlog__message " data-message-id="698270238843732009" id="message-698270238843732009">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( R.G. [5] Sharon_Campbell: . )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698270263611228201" id="message-698270263611228201">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Big Gangster [4] Don_Anderson: dupa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">11-Apr-20 02:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="698604714333306921" id="message-698604714333306921">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: cycuszki )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698605360638066719" id="message-698605360638066719">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: lizanie siusiaka )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">11-Apr-20 02:56 PM</span>
+
+            <div class="chatlog__message " data-message-id="698607305733963885" id="message-698607305733963885">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Dupa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698607354312261742" id="message-698607354312261742">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( True Gangster [3] Travis_Hetha: dupa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">11-Apr-20 04:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="698627094409904239" id="message-698627094409904239">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( R.G. [5] Sharon_Campbell: ola amigos )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698627119902621797" id="message-698627119902621797">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: elo chodź bo broń kupujemy )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698627142610845746" id="message-698627142610845746">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( R.G. [5] Sharon_Campbell: gdzie co jak )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698627410450448414" id="message-698627410450448414">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( R.G. [5] Sharon_Campbell: bloki? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="698627421758554123" id="message-698627421758554123">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: da )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">13-Apr-20 02:50 PM</span>
+
+            <div class="chatlog__message " data-message-id="699330604000477295" id="message-699330604000477295">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: daj coś na fo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699330625282375723" id="message-699330625282375723">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: daję coś )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">13-Apr-20 03:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="699347921493295134" id="message-699347921493295134">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: te kurwy są na evencie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699347959409672222" id="message-699347959409672222">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: olali nas XD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699347967106220103" id="message-699347967106220103">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: co jest )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699348006784204800" id="message-699348006784204800">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: co za gnoje xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699348051025723392" id="message-699348051025723392">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: my tu hard rp a oni co  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699348091438104606" id="message-699348091438104606">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: juz ich ojebałem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699348124233367674" id="message-699348124233367674">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: hah )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">13-Apr-20 04:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="699350334853742602" id="message-699350334853742602">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: wut )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352022708781096" id="message-699352022708781096">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: na osce )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352049510514750" id="message-699352049510514750">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: co? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352108708790335" id="message-699352108708790335">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: zrespilo sie na osiedlu )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352155966144602" id="message-699352155966144602">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ale czo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352171342463016" id="message-699352171342463016">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: a )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352192414384178" id="message-699352192414384178">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: jakie pytanie  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352432181903420" id="message-699352432181903420">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ? ? ? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352452184670208" id="message-699352452184670208">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ??? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352471817945088" id="message-699352471817945088">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: pytanie miałeś )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352564914847754" id="message-699352564914847754">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: nieeee ty powiedziales &quot;gdzie moje auto&quot; a ja &quot;no, dobre pytanie&quot; xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352638160109617" id="message-699352638160109617">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ale wsm czekaj mam )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352647643299912" id="message-699352647643299912">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: aa chujowo przeczytałem xd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352671383060531" id="message-699352671383060531">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: no? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352712260878497" id="message-699352712260878497">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: czy robic jakies ssy i je wrzucac czy sami wolicie ogarniac? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352754363170826" id="message-699352754363170826">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: sami poogarniamy izi )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352777918382172" id="message-699352777918382172">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: dobra )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352812034850847" id="message-699352812034850847">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: wiesz teraz są święta to moze sie nie będa przypierdalać xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352831328780429" id="message-699352831328780429">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: dwa dni temu wstawiałem jakieś )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352920356814888" id="message-699352920356814888">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: nieee, oni potrafia czekac nawet tydzien na ssy )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699352973045924002" id="message-699352973045924002">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: a gdzie wczesniej grałeś )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353132920209489" id="message-699353132920209489">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: szczerze? Wszędzie.. Grałem w milionach organizacji.. Najciekawsze jest to, że grałem w grove jeszce jak bodajze bonger chyb )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353160598421554" id="message-699353160598421554">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: szczerze? Wszędzie.. Grałem w milionach organizacji.. Najciekawsze jest to, że grałem w grove jeszce jak bodajze bonger )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353199856975872" id="message-699353199856975872">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: szczerze? Wszędzie.. Grałem w milionach organizacji.. Najciekawsze jest to, że grałem w grove jeszce jak bodajze bonger )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353310225760326" id="message-699353310225760326">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: gralem w milionach organizacji, tutaj przyszedlem pograc, bo grove zawsze fajnie sie gralo.. )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353364080754738" id="message-699353364080754738">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: a kiedy grałeś na grove )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353374918967376" id="message-699353374918967376">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: gralem jeszce jak bonger chyba cos na patelni gral )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353404081963128" id="message-699353404081963128">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: jak ten samuel itd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353447392215080" id="message-699353447392215080">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: nie pamietam bo ile lat temu to bylo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353532893102120" id="message-699353532893102120">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: albo chrisiak )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353535028002907" id="message-699353535028002907">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: o kurva najs, my właśnie inspirujemy się tamtymi latami  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353585292410941" id="message-699353585292410941">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: no tamta gierka kozak byla )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353607690125353" id="message-699353607690125353">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: i jeszcze w 2017 graliśmy xd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353638648283197" id="message-699353638648283197">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: o prosze )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353662572724254" id="message-699353662572724254">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: tez byłem gld  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353700967120927" id="message-699353700967120927">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: jo? o kurde  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353736077639690" id="message-699353736077639690">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: teraz jest mało gang&#243;w to cięzko coś ugrać og&#243;lnie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353757632167956" id="message-699353757632167956">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ale pd ładnie gra p&#243;ki co )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353824384516186" id="message-699353824384516186">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: pd tak.. moze nie kazdy, ale wiekszosc ladnie gra )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353826817212426" id="message-699353826817212426">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ci z Crime Connection są nieźli  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353859662807150" id="message-699353859662807150">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Ale crips&#243;w na przykład ani razu nie widziałem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353905489772654" id="message-699353905489772654">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ja gralem jeszcze w cripsach od apki )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699353987622633482" id="message-699353987622633482">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ale od ostatniego czasu tam nic nie graja, a jak graja to przychodza poodwalac )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354013040115782" id="message-699354013040115782">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ale grove ma jakiś taki sw&#243;j klimat no  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354037388312576" id="message-699354037388312576">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: &quot;bo serwer jest gowniany&quot; )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354164387381468" id="message-699354164387381468">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: odwalać? XD To by wyjaśniało tych debili co przyszli pierwszego dnia do nas i m&#243;wili, że są cripsami )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354197761589339" id="message-699354197761589339">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: i sie klepali z nami na dm  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354231777394832" id="message-699354231777394832">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: i zabierali nam auta cholownikami  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354272558481647" id="message-699354272558481647">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: pamietasz nazwiska, imie, albo cos?  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354309371887748" id="message-699354309371887748">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Jeden też miał taki kr&#243;tki nick na V  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354363247853650" id="message-699354363247853650">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: na v to nwm )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354384848388117" id="message-699354384848388117">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ale moze byc )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354451797999637" id="message-699354451797999637">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: podczas apki fajnie chlopaki grali, ale potem olali gre po calosci )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354522715160706" id="message-699354522715160706">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ja sie tam wbilem ze wzgledu na pochwaly )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354584145199125" id="message-699354584145199125">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: u nas zajebiście grasz i bardzo oryginalnie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354640957046866" id="message-699354640957046866">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: nie to co typo przedwczoraj podbił i m&#243;wi )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354673605247126" id="message-699354673605247126">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: no elo słyszałem że mozna u was znaleźć kwadrat )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354704773382214" id="message-699354704773382214">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: zawsze sram w nachy jak takie coś słysze XD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354798255898644" id="message-699354798255898644">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: XDDD ja jeszcze tak za mecha robilem to mi mk wbijali, a ja sralem w gacie, ze mi zablokuja postac xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354886499729469" id="message-699354886499729469">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: cripy? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699354966510272612" id="message-699354966510272612">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: niee )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355148086018088" id="message-699355148086018088">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ciagle granie kozaka na osiedlu robi sie nudne, trzeba myslec nad czyms nowym.. mi juz po prostu sie przejadlo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355190771581048" id="message-699355190771581048">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: to kto )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355255263199234" id="message-699355255263199234">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: balla )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355268387045488" id="message-699355268387045488">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: aa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355323294679132" id="message-699355323294679132">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: w 2017 jak my grove graliśmy to balla też zajebiście grali i latina )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355572549582981" id="message-699355572549582981">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ja juz gralem w kilku ballasach, ale szkoda bylo mi jednego, bo chlopaki fajnie grali, sam sie od nich duzo nauczylem, ale )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355585799258172" id="message-699355585799258172">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: ja juz gralem w kilku ballasach, ale szkoda bylo mi jednego, bo chlopaki fajnie grali, sam sie od nich duzo nauczylem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355637036875799" id="message-699355637036875799">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: piekne czasy nie zapomne ich nigdy )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="699355661091340378" id="message-699355661091340378">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: kurwa nie ma co robić jak wszystkich wyjebało na event xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">15-Apr-20 02:02 PM</span>
+
+            <div class="chatlog__message " data-message-id="700043371854430249" id="message-700043371854430249">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: halooooo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">15-Apr-20 03:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="700060889214091264" id="message-700060889214091264">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( R.G. [5] Sharon_Campbell: Gdzie ty )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700061616242163743" id="message-700061616242163743">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Obrabiałem fotki )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700062012012494939" id="message-700062012012494939">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: chodźcie DC )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 01:31 PM</span>
+
+            <div class="chatlog__message " data-message-id="700760447938199613" id="message-700760447938199613">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Elo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760461485801484" id="message-700760461485801484">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: siemano )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760541848797267" id="message-700760541848797267">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: kurwa coś tak se myśle, że jakąś rekrutacje ic wypadałoby dać )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760569208111223" id="message-700760569208111223">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: czy coś  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760610006368268" id="message-700760610006368268">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: bo te siury od nas nei wbijają )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760615110574090" id="message-700760615110574090">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: to dawaj, bo slabo z ludzmi do gierki )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760804495982652" id="message-700760804495982652">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: jak wymyslisz jakie og dawac to mi podaj  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760831859752981" id="message-700760831859752981">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: tez moge dac kilka )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760940202950817" id="message-700760940202950817">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: moment, zapytam sie braciaka czy gra )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700760961828651039" id="message-700760961828651039">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: dobra )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761128334000198" id="message-700761128334000198">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: o 20 będzie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761153344634951" id="message-700761153344634951">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: i git bo ssy trzeba porobić )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761186412789822" id="message-700761186412789822">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: też w sumie jednak możez robić  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761197938737262" id="message-700761197938737262">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: No dobra, gramy coś tera czy czekamy na niego )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761242209615933" id="message-700761242209615933">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Poczekamy i sie z nim ustali )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761296945283144" id="message-700761296945283144">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: dobra, to ja zw, bo musze ogarnac jedna rzecz )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761313391149088" id="message-700761313391149088">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Jakbyś chciał wstawiać kiedyś ssy to wiesz jaki mamy mniej więcej wz&#243;r?  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761338137542658" id="message-700761338137542658">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: taki w formie pamiętnika )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761403417690152" id="message-700761403417690152">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Ty_Robertson: Dobra, jasne - bede wam dawał na DC do wglądu )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700761438976737320" id="message-700761438976737320">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Oooki )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 01:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="700766978897477652" id="message-700766978897477652">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: ellllo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700767683515384040" id="message-700767683515384040">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: na discordzie jest bot do dyspozycji z muzyką )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700767872355663892" id="message-700767872355663892">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Szydziak wbije o 21, zaraz ma być Fifi, Justynka nie wiem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700767917666598913" id="message-700767917666598913">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: o to fajna ekipka bedzie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700768855340875826" id="message-700768855340875826">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: zlewka )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 02:30 PM</span>
+
+            <div class="chatlog__message " data-message-id="700775232390037534" id="message-700775232390037534">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: ja tego nie gram )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700775244893257749" id="message-700775244893257749">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: sory panowie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 02:59 PM</span>
+
+            <div class="chatlog__message " data-message-id="700782465391788211" id="message-700782465391788211">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: kurwa wszystkie auta poznikaly )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700782641888362508" id="message-700782641888362508">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: to dawaj sanchezem z patelni xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700782689527267378" id="message-700782689527267378">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Jak on 2 osobowy xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700782750034034738" id="message-700782750034034738">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Rivero nie dał nam jeszcze aut frakcyjnych )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700782764533874739" id="message-700782764533874739">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: chuj tam po jakies autko sie zajedzie na oske i znowu pod szpital xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700783221432123514" id="message-700783221432123514">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: tamten taksą podjedzie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 03:10 PM</span>
+
+            <div class="chatlog__message " data-message-id="700785172257439804" id="message-700785172257439804">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: mi wl nabilo xd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700785222765248542" id="message-700785222765248542">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: BW czy WL? xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700785252075044955" id="message-700785252075044955">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: wl )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700785294437515406" id="message-700785294437515406">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: za okaleczenie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 03:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="700793060761665606" id="message-700793060761665606">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Wbije Szydziu zaraz to zagramy ładny napad )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 04:14 PM</span>
+
+            <div class="chatlog__message " data-message-id="700801453014384741" id="message-700801453014384741">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Lecimy patelnia )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700802937043157105" id="message-700802937043157105">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: nie piszcie takic akcji )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700802963777781760" id="message-700802963777781760">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: moja wina )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700803059055591425" id="message-700803059055591425">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: ale juz mnie ten palant wkurwia przychodzi i prowokuje, a ja jestem ciety na cos takeigo jak chuj )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 05:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="700824788821868544" id="message-700824788821868544">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Darin wyjebało CI DC )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">17-Apr-20 06:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="700834950890389534" id="message-700834950890389534">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: lece )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700834962412404797" id="message-700834962412404797">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ELuuuwa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700834967202300014" id="message-700834967202300014">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: joł )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700834972868542494" id="message-700834972868542494">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Do zobaczenia )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700835667877429358" id="message-700835667877429358">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: dobra ja sie tez zawijam )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700835682461155334" id="message-700835682461155334">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Little Gangster [1] Ty_Robertson: na razie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="700835742183850035" id="message-700835742183850035">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: cześć )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 05:12 AM</span>
+
+            <div class="chatlog__message " data-message-id="700997131921522769" id="message-700997131921522769">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Siema jest ktoś? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 05:44 AM</span>
+
+            <div class="chatlog__message " data-message-id="701005309862477865" id="message-701005309862477865">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Siemka )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 06:05 AM</span>
+
+            <div class="chatlog__message " data-message-id="701010635995086889" id="message-701010635995086889">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: siema )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 07:07 AM</span>
+
+            <div class="chatlog__message " data-message-id="701026065698783334" id="message-701026065698783334">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Cześć - jest ktoś? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 08:08 AM</span>
+
+            <div class="chatlog__message " data-message-id="701041412011065365" id="message-701041412011065365">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: elo )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701041482651533352" id="message-701041482651533352">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Cześć )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701041514847010837" id="message-701041514847010837">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: co robisz?? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701041594777993228" id="message-701041594777993228">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Siedzę w więzieniu :( )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701041632216088648" id="message-701041632216088648">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: za co )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701041671500202066" id="message-701041671500202066">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Uciekałem LSPD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701041722150486027" id="message-701041722150486027">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: no i zajebioza xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701042027709595729" id="message-701042027709595729">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: og&#243;lnie mamy wstawić info apropo skin&#243;w )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701042216444887040" id="message-701042216444887040">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: od jedynki można używać skin&#243;w gangowych  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701042302566662145" id="message-701042302566662145">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: na 6stce skiny typu sweet big smoke itd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701042653952868433" id="message-701042653952868433">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Okej )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 08:30 AM</span>
+
+            <div class="chatlog__message " data-message-id="701047074443100240" id="message-701047074443100240">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Gdzie jesteś? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701047115257872415" id="message-701047115257872415">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: pod ośką )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 08:58 AM</span>
+
+            <div class="chatlog__message " data-message-id="701054075076214864" id="message-701054075076214864">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: zw )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701054093153796136" id="message-701054093153796136">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Oki ja też )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701055587189915659" id="message-701055587189915659">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: no jest )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701055597117964348" id="message-701055597117964348">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: jestem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701055629183418419" id="message-701055629183418419">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: sprawdzałem skargi na forum na te chuje ze wczoraj xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 09:20 AM</span>
+
+            <div class="chatlog__message " data-message-id="701059639810195486" id="message-701059639810195486">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Jestem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 10:20 AM</span>
+
+            <div class="chatlog__message " data-message-id="701074794703224914" id="message-701074794703224914">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: dobra, ja p&#243;ki co zwijam. Będziem grać coś koło 20 myslę )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701074824491040860" id="message-701074824491040860">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Tak )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 11:12 AM</span>
+
+            <div class="chatlog__message " data-message-id="701087670272655382" id="message-701087670272655382">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: kminie czy odwalacze czy z jakiejś organizacji tamtte typy )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701087774559961179" id="message-701087774559961179">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Nie wiem ale jak cię nie było to czterech murzyn&#243;w podjechało )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701087823683387423" id="message-701087823683387423">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: rodziny puste )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701087852376621086" id="message-701087852376621086">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Coś tam gadali gadali gadali pruli się i pojechali do koreańc&#243;w z Yakuzy )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701087853270269965" id="message-701087853270269965">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: a co robilli? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701087896760746065" id="message-701087896760746065">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Czekaj chodsź )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701087954881216524" id="message-701087954881216524">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: O są te murzyny )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 11:22 AM</span>
+
+            <div class="chatlog__message " data-message-id="701090255289188373" id="message-701090255289188373">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Dmiarze w hummerze to nie ma sensu )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701091592865316974" id="message-701091592865316974">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Ale tu rozpierdol :P )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701091634116558929" id="message-701091634116558929">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Gliny przyjechały wog&#243;le )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701092872765571213" id="message-701092872765571213">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: /zp )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701092886468362350" id="message-701092886468362350">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Nic )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 11:43 AM</span>
+
+            <div class="chatlog__message " data-message-id="701095459271475292" id="message-701095459271475292">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: co tam xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701095516196569118" id="message-701095516196569118">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Spierdoliłem ze szpitala i jadę na ośkę :P )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701095612682338435" id="message-701095612682338435">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: lol jak to )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701095684966973461" id="message-701095684966973461">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ja juz jestem, bo przekabaciłem medyka, żeby mnie wypuścił z karetki xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701095843545088041" id="message-701095843545088041">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Jak mnie przewoził na pozabieg&#243;wkę to chciał wezwać policję )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701095973065326694" id="message-701095973065326694">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Wyciągłem glocka, przystawiłem mu do łba odegrałem, że schodzę z ł&#243;żka szpitalnego i spierdalam )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701096046490550352" id="message-701096046490550352">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: a pd cie nie przeszukiwało? xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701096094414929982" id="message-701096094414929982">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Raczej nie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701096150115024986" id="message-701096150115024986">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: w sensie czy grali akce )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701096165936201878" id="message-701096165936201878">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Nawet nie wiem bo zapierdol był na czacie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701096167521517578" id="message-701096167521517578">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: akcje* )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701096207883436042" id="message-701096207883436042">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Ale ja już na ośce )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 11:55 AM</span>
+
+            <div class="chatlog__message " data-message-id="701098519884464179" id="message-701098519884464179">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Dobra ja narazie robię sobię przerwe, będę około 20:00. )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701098539001839706" id="message-701098539001839706">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Narazie. )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701098543347138641" id="message-701098543347138641">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: gyt )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701098582211821611" id="message-701098582211821611">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Darin, dasz mi jeszcze link do DC? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701099799394648154" id="message-701099799394648154">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: wait bo auta trza przemalować xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 03:04 PM</span>
+
+            <div class="chatlog__message " data-message-id="701146160336863372" id="message-701146160336863372">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Sharon_Campbell: Wy gdzie? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701146173003661364" id="message-701146173003661364">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: Szpital )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701146188853936138" id="message-701146188853936138">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: ośka )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701146246823411874" id="message-701146246823411874">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Sharon_Campbell: Gdzie jak Cię nie ma xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701146260253573211" id="message-701146260253573211">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Sharon_Campbell: a dobra )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701146268298117282" id="message-701146268298117282">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: josem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 03:20 PM</span>
+
+            <div class="chatlog__message " data-message-id="701150152785920010" id="message-701150152785920010">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Cześć )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701150168078352404" id="message-701150168078352404">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: hejka )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701150180984094801" id="message-701150180984094801">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Sharon_Campbell: Hi )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 03:39 PM</span>
+
+            <div class="chatlog__message " data-message-id="701155015435223131" id="message-701155015435223131">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: chodź tu Justyna xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701155084096241754" id="message-701155084096241754">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: i dawaj na DC pogadamy &lt;3 )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701155096058396783" id="message-701155096058396783">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Poproszę admina żeby wyleczyć )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701156182609494016" id="message-701156182609494016">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Sharon_Campbell: Dobra, ja spierdalam na sskę, bo tutaj się nie da xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701156243892338749" id="message-701156243892338749">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Young O.G. [6] Sharon_Campbell: Elko )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701156327660978306" id="message-701156327660978306">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: :C )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 03:53 PM</span>
+
+            <div class="chatlog__message " data-message-id="701158389257994341" id="message-701158389257994341">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Wkońcu mnie ten admin wysłuchał )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 04:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="701162982024937542" id="message-701162982024937542">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: tak jak m&#243;wiłem zapraszam każdego na DC, gdzie są regulaminy bla bla bl )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701163001365135502" id="message-701163001365135502">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Kellan_Campbell: <a href="https://discord.gg/EyEE3W">https://discord.gg/EyEE3W</a> )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701163006758748262" id="message-701163006758748262">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Javier_Shelygin: widziałem )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701163011964010628" id="message-701163011964010628">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Javier_Shelygin: :D )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">18-Apr-20 04:28 PM</span>
+
+            <div class="chatlog__message " data-message-id="701167248664035369" id="message-701167248664035369">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Nie )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167291882012724" id="message-701167291882012724">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Zlewka dla takich ludzi )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167387541635182" id="message-701167387541635182">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Nie wiem czy taka zlewka zaraz nas zabiją )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167445989130300" id="message-701167445989130300">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: no i co, chcesz grać z odwalaczami? xd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167478394323065" id="message-701167478394323065">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Javier_Shelygin: na bw poleżą xd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167542097543168" id="message-701167542097543168">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Kto ich zastrzelił? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167605385265282" id="message-701167605385265282">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: nwm  )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167748025417738" id="message-701167748025417738">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Hah )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167756401311744" id="message-701167756401311744">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Admin czuwał )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167781948817458" id="message-701167781948817458">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Javier_Shelygin: zreportowałem go z 5 razy )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701167810440593409" id="message-701167810440593409">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Ja drugie tyle ;D )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">19-Apr-20 01:01 PM</span>
+
+            <div class="chatlog__message " data-message-id="701477531429372006" id="message-701477531429372006">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Cześć )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701478333380165642" id="message-701478333380165642">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Yo&#39;w jest ktoś? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">19-Apr-20 01:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="701488703155208263" id="message-701488703155208263">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: gram tera ooc jbc )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701488728782274602" id="message-701488728782274602">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Oki )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701489498667745320" id="message-701489498667745320">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: to są z poprzedniej frakcji )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701489543886405764" id="message-701489543886405764">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: fail )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701491121758535790" id="message-701491121758535790">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: W jakimś standardowym kolorze bym prosił xD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701491138955051008" id="message-701491138955051008">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: faikl )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701491142478397471" id="message-701491142478397471">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Ja też )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701491784873803896" id="message-701491784873803896">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Taki oczojebny )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701491803991310337" id="message-701491803991310337">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Taa )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701491806289789010" id="message-701491806289789010">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: 243 )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">19-Apr-20 02:20 PM</span>
+
+            <div class="chatlog__message " data-message-id="701497388954681386" id="message-701497388954681386">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Co tam pany )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497469518741584" id="message-701497469518741584">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: jebać mi sie chce )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497621575106650" id="message-701497621575106650">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: XD )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497657771688049" id="message-701497657771688049">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Na kurwy idź )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497683143295068" id="message-701497683143295068">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Ey Darin )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497704303427694" id="message-701497704303427694">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: Szto )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497739565072415" id="message-701497739565072415">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Od kt&#243;rej rangi można wozić materiały? )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497835417239582" id="message-701497835417239582">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: my jeszcze sie nie zajmujemy matsami )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497866560077828" id="message-701497866560077828">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( O.G. [7] Darin_Campbell: organizacja sie rozwija )) </strong> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="701497867612979292" id="message-701497867612979292">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: A spoko )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">19-Apr-20 07:59 PM</span>
+
+            <div class="chatlog__message " data-message-id="701582748535619705" id="message-701582748535619705">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Javier_Shelygin: xd )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/696491786096607232/b975b1b1fe997e926cb9bf29d81bbd25.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik-RP Bot#2166" data-user-id="696491786096607232" style="">Mrucznik-RP Bot</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">20-Apr-20 08:48 AM</span>
+
+            <div class="chatlog__message " data-message-id="701776417704116335" id="message-701776417704116335">
+                <div class="chatlog__content">
+                    <div class="markdown"><strong> (( Homie [0] Danny_Counter: Cześć )) </strong> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 269 message(s)</div>
+</div>
+
+</body>
+</html>

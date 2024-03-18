@@ -1,0 +1,2285 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>eĸιpα мrυczɴιĸ role plαy - ιɴғorмαcje</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        /* General */
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discord.com/assets/6c6374bad0b0b6d204d8d6dc4a18d820.woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discord.com/assets/e8acd7d9bf6207f99350ca9f9e23b168.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discord.com/assets/3bdef1251a424500c1b3a78dea9b7e57.woff);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discord.com/assets/be0060dafb7a0e31d2a1ca17c0708636.woff);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Whitney;
+    src: url(https://discord.com/assets/8e12fb4f14d9c4592eb8ec9f22337b04.woff);
+    font-weight: 700;
+}
+
+body {
+    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    object-fit: contain;
+}
+
+.markdown {
+    max-width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.spoiler {
+    width: fit-content;
+}
+
+.spoiler--hidden {
+    cursor: pointer;
+}
+
+.spoiler-text {
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-text {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler--hidden .spoiler-text::selection {
+    color: rgba(0, 0, 0, 0);
+}
+
+.spoiler-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.spoiler--hidden .spoiler-image {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.spoiler--hidden .spoiler-image img {
+    filter: blur(44px);
+}
+
+.spoiler--hidden .spoiler-image:after {
+    content: "SPOILER";
+    color: #dcddde;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 0.5em 0.7em;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+.spoiler--hidden:hover .spoiler-image:after {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.quote {
+    margin: 0.1em 0;
+    padding-left: 0.6em;
+    border-left: 4px solid;
+    border-radius: 3px;
+}
+
+.pre {
+    font-family: "Consolas", "Courier New", Courier, monospace;
+}
+
+.pre--multiline {
+    margin-top: 0.25em;
+    padding: 0.5em;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+.pre--inline {
+    padding: 2px;
+    border-radius: 3px;
+    font-size: 0.85em;
+}
+
+.mention {
+    border-radius: 3px;
+    padding: 0 2px;
+    color: #7289da;
+    background: rgba(114, 137, 218, .1);
+    font-weight: 500;
+}
+
+.emoji {
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.06em;
+    vertical-align: -0.4em;
+}
+
+.emoji--small {
+    width: 1em;
+    height: 1em;
+}
+
+.emoji--large {
+    width: 2.8em;
+    height: 2.8em;
+}
+
+/* Preamble */
+
+.preamble {
+    display: grid;
+    margin: 0 0.3em 0.6em 0.3em;
+    max-width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.preamble__guild-icon-container {
+    grid-column: 1;
+}
+
+.preamble__guild-icon {
+    max-width: 88px;
+    max-height: 88px;
+}
+
+.preamble__entries-container {
+    grid-column: 2;
+    margin-left: 0.6em;
+}
+
+.preamble__entry {
+    font-size: 1.4em;
+}
+
+.preamble__entry--small {
+    font-size: 1em;
+}
+
+/* Chatlog */
+
+.chatlog {
+    max-width: 100%;
+}
+
+.chatlog__message-group {
+    display: grid;
+    margin: 0 0.6em;
+    padding: 0.9em 0;
+    border-top: 1px solid;
+    grid-template-columns: auto 1fr;
+}
+
+.chatlog__author-avatar-container {
+    grid-column: 1;
+    width: 40px;
+    height: 40px;
+}
+
+.chatlog__author-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.chatlog__messages {
+    grid-column: 2;
+    margin-left: 1.2em;
+    min-width: 50%;
+}
+
+.chatlog__author-name {
+    font-weight: 500;
+}
+
+.chatlog__timestamp {
+    margin-left: 0.3em;
+    font-size: 0.75em;
+}
+
+.chatlog__message {
+    padding: 0.1em 0.3em;
+    margin: 0 -0.3em;
+    background-color: transparent;
+    transition: background-color 1s ease;
+}
+
+.chatlog__content {
+    font-size: 0.95em;
+    word-wrap: break-word;
+}
+
+.chatlog__edited-timestamp {
+    margin-left: 0.15em;
+    font-size: 0.8em;
+}
+
+.chatlog__attachment {
+    margin-top: 0.3em;
+}
+
+.chatlog__attachment-thumbnail {
+    vertical-align: top;
+    max-width: 45vw;
+    max-height: 500px;
+    border-radius: 3px;
+}
+
+.chatlog__embed {
+    display: flex;
+    margin-top: 0.3em;
+    max-width: 520px;
+}
+
+.chatlog__embed-color-pill {
+    flex-shrink: 0;
+    width: 0.25em;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.chatlog__embed-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 0.6em;
+    border: 1px solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.chatlog__embed-content {
+    display: flex;
+    width: 100%;
+}
+
+.chatlog__embed-text {
+    flex: 1;
+}
+
+.chatlog__embed-author {
+    display: flex;
+    margin-bottom: 0.3em;
+    align-items: center;
+}
+
+.chatlog__embed-author-icon {
+    margin-right: 0.5em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.chatlog__embed-author-name {
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-title {
+    margin-bottom: 0.2em;
+    font-size: 0.875em;
+    font-weight: 600;
+}
+
+.chatlog__embed-description {
+    font-weight: 500;
+    font-size: 0.85em;
+}
+
+.chatlog__embed-fields {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatlog__embed-field {
+    flex: 0;
+    min-width: 100%;
+    max-width: 506px;
+    padding-top: 0.6em;
+    font-size: 0.875em;
+}
+
+.chatlog__embed-field--inline {
+    flex: 1;
+    flex-basis: auto;
+    min-width: 150px;
+}
+
+.chatlog__embed-field-name {
+    margin-bottom: 0.2em;
+    font-weight: 600;
+}
+
+.chatlog__embed-field-value {
+    font-weight: 500;
+}
+
+.chatlog__embed-thumbnail {
+    flex: 0;
+    margin-left: 1.2em;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-image-container {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-image {
+    max-width: 500px;
+    max-height: 400px;
+    border-radius: 3px;
+}
+
+.chatlog__embed-footer {
+    margin-top: 0.6em;
+}
+
+.chatlog__embed-footer-icon {
+    margin-right: 0.2em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.chatlog__embed-footer-text {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.chatlog__reactions {
+    display: flex;
+}
+
+.chatlog__reaction {
+    display: flex;
+    align-items: center;
+    margin: 0.35em 0.1em 0.1em 0.1em;
+    padding: 0.2em 0.35em;
+    border-radius: 3px;
+}
+
+.chatlog__reaction-count {
+    min-width: 9px;
+    margin-left: 0.35em;
+    font-size: 0.875em;
+}
+
+.chatlog__bot-tag {
+    position: relative;
+    top: -.2em;
+    margin-left: 0.3em;
+    padding: 0.05em 0.3em;
+    border-radius: 3px;
+    vertical-align: middle;
+    line-height: 1.3;
+    background: #7289da;
+    color: #ffffff;
+    font-size: 0.625em;
+    font-weight: 500;
+}
+
+/* Postamble */
+
+.postamble {
+    margin: 1.4em 0.3em 0.6em 0.3em;
+    padding: 1em;
+    border-top: 1px solid;
+}
+    </style>
+    <style>
+        /* General */
+
+body {
+    background-color: #36393e;
+    color: #dcddde;
+}
+
+a {
+    color: #0096cf;
+}
+
+.spoiler-text {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.spoiler--hidden .spoiler-text {
+    background-color: #202225;
+}
+
+.spoiler--hidden:hover .spoiler-text {
+    background-color: rgba(32, 34, 37, 0.8);
+}
+
+.quote {
+    border-color: #4f545c;
+}
+
+.pre {
+    background-color: #2f3136 !important;
+}
+
+.pre--multiline {
+    border-color: #282b30 !important;
+    color: #b9bbbe !important;
+}
+
+/* === Preamble === */
+
+.preamble__entry {
+    color: #ffffff;
+}
+
+/* Chatlog */
+
+.chatlog__message-group {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.chatlog__author-name {
+    color: #ffffff;
+}
+
+.chatlog__timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__message--highlighted {
+    background-color: rgba(114, 137, 218, 0.2) !important;
+}
+
+.chatlog__message--pinned {
+    background-color: rgba(249, 168, 37, 0.05);
+}
+
+.chatlog__edited-timestamp {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.chatlog__embed-color-pill--default {
+    background-color: rgba(79, 84, 92, 1);
+}
+
+.chatlog__embed-content-container {
+    background-color: rgba(46, 48, 54, 0.3);
+    border-color: rgba(46, 48, 54, 0.6);
+}
+
+.chatlog__embed-author-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-author-name-link {
+    color: #ffffff;
+}
+
+.chatlog__embed-title {
+    color: #ffffff;
+}
+
+.chatlog__embed-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-field-name {
+    color: #ffffff;
+}
+
+.chatlog__embed-field-value {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__embed-footer {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.chatlog__reaction {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chatlog__reaction-count {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Postamble */
+
+.postamble {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.postamble__entry {
+    color: #ffffff;
+}
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler--hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/679258551625187339/b8f399e06c727b8991db479a3e3d7ec8.png" alt="Guild icon">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">eĸιpα мrυczɴιĸ role plαy</div>
+        <div class="preamble__entry">ѕтreғα cαłej ekipy / ιɴғorмαcje</div>
+
+
+            <div class="preamble__entry preamble__entry--small">
+After 12-Jul-20 12:00 AM            </div>
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">12-Jul-20 02:28 PM</span>
+
+            <div class="chatlog__message " data-message-id="731849505657585674" id="message-731849505657585674">
+                <div class="chatlog__content">
+                    <div class="markdown">Proszę wszystkich o zmianę hasła na forum oraz serwerze. W celu ponownego uzyskania dostępu do forum proszę zgłosić się do Akaexusa. </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/679259505930010625/731849505535688805/unknown.png">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/679259505930010625/731849505535688805/unknown.png" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="731849912869847044" id="message-731849912869847044">
+                <div class="chatlog__content">
+                    <div class="markdown">Do tego <span class="mention" title="Niuniek#0714">@Niuniek</span> oraz <span class="mention" title="Laiz#0524">@Sandał</span> jak ogarniecie wszystkie te sprawy to zgłoście się po zwrot administratora na serwerze. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128514;" title="&#128514;" src="https://twemoji.maxcdn.com/2/72x72/1f602.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127477;" title="&#127477;" src="https://twemoji.maxcdn.com/2/72x72/1f1f5.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127470;" title="&#127470;" src="https://twemoji.maxcdn.com/2/72x72/1f1ee.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127471;" title="&#127471;" src="https://twemoji.maxcdn.com/2/72x72/1f1ef.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127462;" title="&#127462;" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127472;" title="&#127472;" src="https://twemoji.maxcdn.com/2/72x72/1f1f0.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127480;" title="&#127480;" src="https://twemoji.maxcdn.com/2/72x72/1f1f8.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="731850874464370770" id="message-731850874464370770">
+                <div class="chatlog__content">
+                    <div class="markdown">Dodatkowo proszę ściągnąć sobie na telefon aplikację <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2</a>. Będzie Wam potrzebna przy odzyskaniu dostępu do forum. <span class="chatlog__edited-timestamp" title="12-Jul-20 02:34 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="731851221048098956" id="message-731851221048098956">
+                <div class="chatlog__content">
+                    <div class="markdown">Dotyczy to KAŻDEGO. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127476;" title="&#127476;" src="https://twemoji.maxcdn.com/2/72x72/1f1f4.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127472;" title="&#127472;" src="https://twemoji.maxcdn.com/2/72x72/1f1f0.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127464;&#127475;" title="&#127464;&#127475;" src="https://twemoji.maxcdn.com/2/72x72/1f1e8-1f1f3.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127472;&#127477;" title="&#127472;&#127477;" src="https://twemoji.maxcdn.com/2/72x72/1f1f0-1f1f5.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">13-Jul-20 05:28 AM</span>
+
+            <div class="chatlog__message " data-message-id="732076022840688732" id="message-732076022840688732">
+                <div class="chatlog__content">
+                    <div class="markdown">W wyniku pewnych zgrzyt&#243;w, kt&#243;re się pojawiły macie zakaz bawienia się cmd /login i /logoutpl. Od pewnego czasu przekraczało to granice dobrego smaku i wreszcie pojawił się zgrzyt. Jeśli pojawią się następne zgłoszenia odnośnie nadużywania tych cmd to będziecie karani bezpośrednio degradacjami. Zakaz jest na tą chwilę słowny. Obie cmd w następnej aktualizacji zostaną zmienione. /login będziecie mogli stosować do 1000@lvl tylko i wyłącznie na sobie. /login na wszytskich oraz cmd /logoutpl zostają przeniesione na 1000@lvl. <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="chatlog__edited-timestamp" title="13-Jul-20 05:32 AM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127482;" title="&#127482;" src="https://twemoji.maxcdn.com/2/72x72/1f1fa.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127477;" title="&#127477;" src="https://twemoji.maxcdn.com/2/72x72/1f1f5.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127480;" title="&#127480;" src="https://twemoji.maxcdn.com/2/72x72/1f1f8.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">13-Jul-20 05:53 AM</span>
+
+            <div class="chatlog__message " data-message-id="732082182151209021" id="message-732082182151209021">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://mrucznik-rp.pl/topic/97652-rskarga-ryan-jones-george-pagnotto/?tab=comments#comment-1046411">https://mrucznik-rp.pl/topic/97652-rskarga-ryan-jones-george-pagnotto/?tab=comments#comment-1046411</a>
+Na podstawie tej sytuacji chciałbym nanieść małą korektę odnośnie zakazu karania po ssach. Jeżeli jesteście na serwerze i jesteście świadkami takiej sytuacji to wyjaśnijcie graczowi dlaczego nie możecie nadać kary, w jaki spos&#243;b ma dalej postąpić oraz w przypadku gdy stracili jakiś majątek (np. /zabierzportfel), że po akceptacji skargi mogą odzyskać utracone środki u mnie lub Telehamy. <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="chatlog__edited-timestamp" title="13-Jul-20 05:53 AM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127462;" title="&#127462;" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127475;" title="&#127475;" src="https://twemoji.maxcdn.com/2/72x72/1f1f3.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127476;" title="&#127476;" src="https://twemoji.maxcdn.com/2/72x72/1f1f4.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">15-Jul-20 05:17 AM</span>
+
+            <div class="chatlog__message " data-message-id="732798084085710929" id="message-732798084085710929">
+                <div class="chatlog__content">
+                    <div class="markdown">Prawdopodobnie opuścimy discorda i przeniesiemy się na forum. Pozbędziemy się jednego problemu z wyciekającymi wiadomościami. Co chcielibyście zobaczyć w dziale? Jakie tematy są potrzebne? Zapraszam na PW jak ktoś ma jakieś propozycje. Slacka czeka podobny los xd <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="chatlog__edited-timestamp" title="15-Jul-20 05:18 AM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">15-Jul-20 05:28 AM</span>
+
+            <div class="chatlog__message " data-message-id="732800736341000293" id="message-732800736341000293">
+                <div class="chatlog__content">
+                    <div class="markdown">Wcześniej pytałem o pomoc w sprawie zmiany uprawnień dla poszczeg&#243;lnych rang. Byłem trochę zajęty i uciekł mi temat. Jeśli kt&#243;ryś <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> chce pom&#243;c to niech zostawi reakcje pod postem. Dostaniecie listę cmd w arkuszu i zaznaczycie, kt&#243;ra przydałaby się na p@. Siedzicie na serwerze i widzicie czego Wam brakuje. 4 minutki roboty, a będę pamiętał kto pom&#243;gł <img class="emoji " alt="😋" title="😋" src="https://twemoji.maxcdn.com/2/72x72/1f60b.png"> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128572;" title="&#128572;" src="https://twemoji.maxcdn.com/2/72x72/1f63c.png">
+                                <span class="chatlog__reaction-count">10</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">9</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128076;" title="&#128076;" src="https://twemoji.maxcdn.com/2/72x72/1f44c.png">
+                                <span class="chatlog__reaction-count">7</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128123;" title="&#128123;" src="https://twemoji.maxcdn.com/2/72x72/1f47b.png">
+                                <span class="chatlog__reaction-count">5</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127472;&#127477;" title="&#127472;&#127477;" src="https://twemoji.maxcdn.com/2/72x72/1f1f0-1f1f5.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">16-Jul-20 05:25 AM</span>
+
+            <div class="chatlog__message " data-message-id="733162482419368036" id="message-733162482419368036">
+                <div class="chatlog__content">
+                    <div class="markdown">Proszę, aby do końca tygodnia każdy podpisał swoje postacie do konta na forum. Żeby Was zachęcić to w raporcie uwzględnię tylko osoby, kt&#243;re to zrobiły <img class="emoji " alt="😋" title="😋" src="https://twemoji.maxcdn.com/2/72x72/1f60b.png"> <img class="emoji " alt="😼" title="😼" src="https://twemoji.maxcdn.com/2/72x72/1f63c.png"> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">17-Jul-20 09:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="733770250356785273" id="message-733770250356785273">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&comment=1047642">https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&amp;comment=1047642</a> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> 
+<a href="https://mrucznik-rp.pl/topic/64992-p-podsumowania/?do=findComment&comment=1047643">https://mrucznik-rp.pl/topic/64992-p-podsumowania/?do=findComment&amp;comment=1047643</a> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">17-Jul-20 09:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="733774325001355296" id="message-733774325001355296">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span> - awans za 2 plusy - 2P@lvl
+<span class="mention" title="Marysia#1382">@Marysia</span> - awans za 2 plusy - 3P@lvl
+<span class="mention" title="Quiks#7844">@Quiks</span> - gratuluję, wszystkie warunki spełnione - nominacja na pełnego admina zostanie klepnięta na zebraniu
+<span class="mention" title="D3RIX#3946">@Smiting</span> - awans za 2 plusy - 3P@lvl
+<span class="mention" title="WIDELEC#1071">@WIDELEC</span> - plusik
+<span class="mention" title="Patryk#1196">@doktor myszojeleń</span> - plusik
+<span class="mention" title="Viperek#1638">@Viperek</span> - awans za 2 plusy - 3P@lvl
+<span class="mention" title="Krzaku#5904">@Krzaku</span> - awans za 2 plusy - 2P@lvl
+<span class="mention" title="xSeLeCTx#2517">@xSeLeCTx</span> - KOLEJNY PLUSIK GRATULUJĘ &lt;3
+<span class="mention" title="Kolman#6410">@Kolman</span> - minus
+<span class="mention" title="PRT#0001">@prt</span> - awans na 60@lvl, degradacja na 50@lvl, awans na 60@lvl
+<span class="mention" title="Eriket#7294">@Eriket</span> - awans na 1700@lvl
+<span class="mention" title="Talar#6704">@Talar</span> - degradacja na 400@lvl (2/3)
+<span class="mention" title="Niuniek#0714">@Niuniek</span> - umawialiśmy się, czekam na kontakt na PW </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128512;" title="&#128512;" src="https://twemoji.maxcdn.com/2/72x72/1f600.png">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">19-Jul-20 10:11 PM</span>
+
+            <div class="chatlog__message " data-message-id="734502574295875665" id="message-734502574295875665">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Quiks#7844">@Quiks</span> przenoszę do czerwonych <img class="emoji " alt="😉" title="😉" src="https://twemoji.maxcdn.com/2/72x72/1f609.png"> Gratuluję </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127344;️" title="&#127344;️" src="https://twemoji.maxcdn.com/2/72x72/1f170.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127471;" title="&#127471;" src="https://twemoji.maxcdn.com/2/72x72/1f1ef.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127462;" title="&#127462;" src="https://twemoji.maxcdn.com/2/72x72/1f1e6.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❓" title="❓" src="https://twemoji.maxcdn.com/2/72x72/2753.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">19-Jul-20 10:26 PM</span>
+
+            <div class="chatlog__message " data-message-id="734506417637163019" id="message-734506417637163019">
+                <div class="chatlog__content">
+                    <div class="markdown">Chciałbym r&#243;wnież poinformować, że system nagr&#243;d miesięcznych został klepnięty. TOP3 aktywnych admin&#243;w otrzyma w nagrodę mrucoinsy (ilość r&#243;wną miesięcznemu KP). Pierwsze nagrody za lipiec zostaną nadane na koniec miesiąca. <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">24-Jul-20 09:27 PM</span>
+
+            <div class="chatlog__message " data-message-id="736303588208410726" id="message-736303588208410726">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&comment=1048723">https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&amp;comment=1048723</a> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> 
+<a href="https://mrucznik-rp.pl/topic/64992-p-podsumowania/?do=findComment&comment=1048724">https://mrucznik-rp.pl/topic/64992-p-podsumowania/?do=findComment&amp;comment=1048724</a> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="736304567523999777" id="message-736304567523999777">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Quiks#7844">@Quiks</span> - awans 2x na 10@lvl (pomoc przy reformie + aktywność)
+<span class="mention" title="Eriket#7294">@Eriket</span> - awans 1800@lvl
+<span class="mention" title="Viperek#1638">@Viperek</span> - wniosek na pełnego @ (jeśli nie będzie sprzeciw&#243;w to nadam w niedzielę)
+<span class="mention" title="Marysia#1382">@Marysia</span> - wniosek na pełnego @ (jeśli nie będzie sprzeciw&#243;w to nadam w niedzielę)
+<span class="mention" title="shaker#7608">@shaker</span> - plusik, wymieniam 2 plusy na 3P@lvl
+<span class="mention" title="Patryk#1196">@doktor myszojeleń</span> - /dpa wycofane po rozmowie z Neverem, plusik, wymieniam 2 plusy na 3P@lvl
+<span class="mention" title="Lionelek#1076">@lionelek gombao</span> - wniosek na pełnego @ (jeśli nie będzie sprzeciw&#243;w to nadam w niedzielę)
+<span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span> - plusik, wymieniam 2 plusy na 3P@lvl
+<span class="mention" title="D3RIX#3946">@Smiting</span> - czerwone, ale nieobecność
+<span class="mention" title="Krzaku#5904">@Krzaku</span> - musimy doprecyzować Twoją nieobecność, zapraszam PW! <span class="chatlog__edited-timestamp" title="25-Jul-20 06:55 AM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">6</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="736305008559128599" id="message-736305008559128599">
+                <div class="chatlog__content">
+                    <div class="markdown">Dodatkowo widzę u Was pewną tendencję do siedzenia na /aduty, ale bardzo nikłego używania mocy w tym czasie. Popracujemy nad nowym systemem /report, kt&#243;ry będzie lepiej obrazował ile report&#243;w przeminęło w czasie Waszego /aduty, a na ile odpowiedzieliście. </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="736305854307106966" id="message-736305854307106966">
+                <div class="chatlog__content">
+                    <div class="markdown">Na tą chwilę w konkursie na TOP3 aktywnych administrator&#243;w prowadzą <span class="mention" title="Marysia#1382">@Marysia</span> <span class="mention" title="Viperek#1638">@Viperek</span> <span class="mention" title="Quiks#7844">@Quiks</span>. 
+Osoby, kt&#243;re cały czas liczą się w grze o top3 to: <span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span>, <span class="mention" title="WIDELEC#1071">@WIDELEC</span>, <span class="mention" title="xSeLeCTx#2517">@xSeLeCTx</span> oraz <span class="mention" title="D3RIX#3946">@Smiting</span>.
+Przypominam, że nagrodą jest liczba mrucoins&#243;w, kt&#243;ra odpowiada miesięcznemu KP. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">25-Jul-20 06:50 PM</span>
+
+            <div class="chatlog__message " data-message-id="736626556998254613" id="message-736626556998254613">
+                <div class="chatlog__content">
+                    <div class="markdown">Pracuję nad reformą administracji i rozdzielam obecnych administrator&#243;w pod nowe grupy uprawnień. W kolejności: p&#243;ł administrator, młodszy administrator, administrator, starszy administrator. Pod uwagę biorę staż na serwerze (całkowity, wszystkie kadencje), obecny @lvl oraz wkład na rzecz serwisu. Na tą chwilę podział wygląda następująco:
+P&#243;ł administracja - Ci co obecnie. Ci co przejdą etap lecą na młodszego admina
+Młodszy administrator - <span class="mention" title="Never#8670">@never</span> oraz <span class="mention" title="PRT#0001">@prt</span> 
+Administrator - <span class="mention" title="Talar#6704">@Talar</span>, <span class="mention" title="Teciu#6435">@Randy</span> oraz <span class="mention" title="Quiks#7844">@Quiks</span> 
+Starszy administrator - <span class="mention" title="Daglas#2274">@Daglas</span>, <span class="mention" title="Herato#4007">@Herato ⚡</span> oraz <span class="mention" title="Eriket#7294">@Eriket</span> 
+Levele wewnątrz grup ustalę z osobami, kt&#243;re się do danej grupy załapały.
+
+Jeżeli ktoś ma jakieś uwagi i uważam, że źle zrobiłem to zapraszam do dyskusji na PW. Nie chcę, żeby ktoś został niesprawiedliwie potraktowany dlatego mam nadzieję, że pomożecie. <span class="chatlog__edited-timestamp" title="25-Jul-20 06:56 PM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">25-Jul-20 10:32 PM</span>
+
+            <div class="chatlog__message " data-message-id="736682403971465247" id="message-736682403971465247">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Viperek#1638">@Viperek</span>, <span class="mention" title="Marysia#1382">@Marysia</span>, <span class="mention" title="Lionelek#1076">@lionelek gombao</span> witamy w gronie pełnej administracji. Wnioski zatwierdzone. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">4</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128518;" title="&#128518;" src="https://twemoji.maxcdn.com/2/72x72/1f606.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">26-Jul-20 09:50 AM</span>
+
+            <div class="chatlog__message " data-message-id="736852918153773137" id="message-736852918153773137">
+                <div class="chatlog__content">
+                    <div class="markdown">Witam, szybkie 2 sprawy.
+1) Jeżeli wpisujecie nieobecność to dotyczy to tylko i wyłącznie NIEOBECNOŚCI. Nie mamy w żadnych regulaminach oraz zapiskach pojęcia &quot;ograniczenie&quot;. Zgłaszacie te terminy, w kt&#243;rych jesteście pewni, że nie wyrobicie neutralnego raportu (około 4h). Każdy wpis z ograniczeniem będę r&#243;wnież traktował jako nieobecność.
+2) Jak jeszcze raz dowiem się że jakiś członek naszej ekipy wchodzi sobie pod wpływem napoj&#243;w wysokoprocentowych i odwala to będę karał bardzo surowo. Wszyscy jesteście dorośli lub prawie dorośli i odpowiadacie za swoje poczynania w każdym stanie. Idźcie na konkurencję odpierdalać po wojaku, a nie na swoim podw&#243;rku. <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">26-Jul-20 10:39 AM</span>
+
+            <div class="chatlog__message " data-message-id="736865171498205254" id="message-736865171498205254">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Marysia#1382">@Marysia</span> <span class="mention" title="Lionelek#1076">@lionelek gombao</span>  <span class="mention" title="Viperek#1638">@Viperek</span> wyślijcie mi maila na PW to dodam Was na slacka. MAILA, KT&#211;RY NIE ZAWIERA WASZYCH DANYCH OSOBOWYCH. <span class="chatlog__edited-timestamp" title="26-Jul-20 12:15 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">26-Jul-20 11:41 AM</span>
+
+            <div class="chatlog__message " data-message-id="736880806944833547" id="message-736880806944833547">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Viperek#1638">@Viperek</span> za wczorajsze libacje-rewalacje otrzymuje minusa. Dodatkowo ten tydzień jest bez awansu, ale godziny mają być wbite, a jeszcze następny tydzień to 14h na pozytywny raport. 
+
+Mam nadzieję, że będzie to przestroga dla reszty, aby takie sytuacje się nie powtarzały. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">26-Jul-20 01:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="736910400079003669" id="message-736910400079003669">
+                <div class="chatlog__content">
+                    <div class="markdown">Chcecie, żeby połączenie /a i DC wr&#243;ciło? Czy wolicie na luzie pogadać na /a bez żadnego spisywania tego? Pierwsza opcja - T, Druga opcja - N <span class="mention">@everyone</span> <span class="chatlog__edited-timestamp" title="26-Jul-20 01:39 PM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127481;" title="&#127481;" src="https://twemoji.maxcdn.com/2/72x72/1f1f9.png">
+                                <span class="chatlog__reaction-count">5</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127475;" title="&#127475;" src="https://twemoji.maxcdn.com/2/72x72/1f1f3.png">
+                                <span class="chatlog__reaction-count">18</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/385470216085438464/5f539e1561f90ed3dd02fd3c297bce3e.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="KaMiL#7642" data-user-id="385470216085438464" style="color: rgb(233,30,99)">ƘΔΜIL</span>
+
+
+        <span class="chatlog__timestamp">26-Jul-20 02:01 PM</span>
+
+            <div class="chatlog__message " data-message-id="736915979627528234" id="message-736915979627528234">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention">@everyone</span> 
+witam prosimy o ponowienie oddanych przez Was głos&#243;w poniewaz w zwiazku z krytycznym bugiem discorda uciekły nam głosy </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">27-Jul-20 05:02 AM</span>
+
+            <div class="chatlog__message " data-message-id="737142903696130109" id="message-737142903696130109">
+                <div class="chatlog__content">
+                    <div class="markdown">Z nową reformą zaczną znikać komisje i każdy z Was będzie m&#243;gł przypisać pod siebie jakieś zadanie indywidualne. Nie jest to obowiązkowe, ale przyspiesza awans, gdy solidnie wykonuje się swoją pracę. Jednak gdy  zgłaszamy  się do czegoś i nie wywiązujemy  to kary będą lecieć na konto administracyjne, a nie jak dawniej komisyjne.
+
+Jedną z takich funkcji jest moderacja. Obecnie trwa rekrutacja na moderatora discord i nikt z Was się nie zgłosił. Przedłużyłem rekrutację o 2 dni i zachęcam Was do wzięcia w niej udziału. <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="chatlog__edited-timestamp" title="27-Jul-20 05:18 AM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128515;" title="&#128515;" src="https://twemoji.maxcdn.com/2/72x72/1f603.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/385470216085438464/5f539e1561f90ed3dd02fd3c297bce3e.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="KaMiL#7642" data-user-id="385470216085438464" style="color: rgb(233,30,99)">ƘΔΜIL</span>
+
+
+        <span class="chatlog__timestamp">28-Jul-20 04:12 PM</span>
+
+            <div class="chatlog__message " data-message-id="737673822370791506" id="message-737673822370791506">
+                <div class="chatlog__content">
+                    <div class="markdown">513m4 <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> 
+Jako że po nadchodzącej neutralizacji komisji, liczba os&#243;b wykonujących dotychczasowe obowiązki członk&#243;w KS zostanie zmniejszona do minimum. Dwie osoby będą odpowiadały za sprawdzanie i wcześniejsze szykowanie skarg na graczy <strong>przez cały tydzień</strong>, a dwie kolejne - rozpatrywanie apelacji. Samo szykowanie apelacji pozostanie w zasadzie bez zmian - będę zajmował się tym ja z Daglasem.
+
+Reasumując, chętnych P@ / @ i świadomych ewentualnego wykonywania takich obowiązk&#243;w - zapraszam na PW discord, wystarczy nam informacja czy wolelibyście zajmować się skargami czy apelacjami - po rozmowie z Daglasem podejmiemy decyzję kogo zaprosimy do wsp&#243;łpracy. 
+
+
+Ostatecznego terminu jako tako nie ma, aczkolwiek zapewne będziemy starali rozpatrywać zgłoszenia na bieżąco, więc najlepiej jakby osoby chętne napisały takową wiadomość już dzisiaj / jutro. 
+
+
+P0zdr4w14my, razem z <span class="mention" title="Daglas#2274">@Daglas</span>. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">28-Jul-20 04:26 PM</span>
+
+            <div class="chatlog__message " data-message-id="737677464163057724" id="message-737677464163057724">
+                <div class="chatlog__content">
+                    <div class="markdown">Takie zadania będą dodatkowo punktowane. Przyspieszają awans, a nawet go umożliwiają. Chciałbym jednak zauważyć, że jeśli zgłosicie się i będzie olewać swoje zadania to będziecie karani jako administrator do swojej kartoteki. </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="737677696200343593" id="message-737677696200343593">
+                <div class="chatlog__content">
+                    <div class="markdown">A no i takie zadania będą się tutaj pojawiać do wyboru i jak się okaże, że nikt z administracji do niczego nie jest chętny to poszukamy innych chętnych os&#243;b <img class="emoji " alt="😼" title="😼" src="https://twemoji.maxcdn.com/2/72x72/1f63c.png"> <img class="emoji " alt="😛" title="😛" src="https://twemoji.maxcdn.com/2/72x72/1f61b.png"> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">30-Jul-20 04:50 AM</span>
+
+            <div class="chatlog__message " data-message-id="738226909116104724" id="message-738226909116104724">
+                <div class="chatlog__content">
+                    <div class="markdown">Niestety nikt się nie zgłosił do discorda, ale rozumiem, że jesteście zajęci adminowaniem. Ostatnio dawałem neutralny raport od 4h, ale zwiększymy do 4,5h tygodniowo. Mam nadzieję, że z KS będzie lepiej, bo wr&#243;ci bezwzględne 5h. <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">31-Jul-20 05:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="738777693117743256" id="message-738777693117743256">
+                <div class="chatlog__content">
+                    <div class="markdown">1) Awanse w tym i następnym tygodniu będą zdalne. Mianowicie wrzucam na slacka zarządowego i jak nikt nie ma przeciwskazań to w niedzielę nadaje Wam rangi. Zebranko będzie dopiero 15 sierpnia, bo H@ będą opalać plecki na słoneczku! 
+2) Postaram się w przeciągu tych 2 tygodni zaznajomić Was z nową reformą. Pojawią się tematy, opisy oraz będę odpowiadał na pytanka.
+3) Reforma wejdzie jak Mrucznik przydzieli uprawnienia na serwerze.
+4) Do tego czasu nadaję Wam awanse w starym systemie, a po wejściu nowego przeliczam to na plusy w nowym systemie, więc nic się nie zmarnuje :P
+5) Raport miesięczny pojawi się koło 22-23 już bez tych ostatnich dw&#243;ch godzin, bo top3 jest już znane.
+6) Raport tygodniowy pojawi się koło 21.30-22, więc proszę o 21 zapisać postępy na /aduty </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="738778753324285992" id="message-738778753324285992">
+                <div class="chatlog__content">
+                    <div class="markdown">Jak ktoś miał r&#243;żne nicki w tym miesiącu to niech mi napisze na PW to wtedy dodam godzinki do miesięcznego. <span class="mention" style="color: rgb(158, 10, 10); background-color: rgba(158, 10, 10, 0.1);">@Starszy Administrator</span> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(242, 50, 50); background-color: rgba(242, 50, 50, 0.1);">@Młodszy Administrator</span> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">31-Jul-20 09:41 PM</span>
+
+            <div class="chatlog__message " data-message-id="738843909274206250" id="message-738843909274206250">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&comment=1049405">https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&amp;comment=1049405</a> <span class="mention" style="color: rgb(242, 50, 50); background-color: rgba(242, 50, 50, 0.1);">@Młodszy Administrator</span> <span class="mention" style="color: rgb(206, 9, 9); background-color: rgba(206, 9, 9, 0.1);">@Administrator</span> <span class="mention" style="color: rgb(158, 10, 10); background-color: rgba(158, 10, 10, 0.1);">@Starszy Administrator</span> 
+<a href="https://mrucznik-rp.pl/topic/64992-p-podsumowania/?do=findComment&comment=1049406">https://mrucznik-rp.pl/topic/64992-p-podsumowania/?do=findComment&amp;comment=1049406</a> <span class="mention" style="color: rgb(255, 96, 96); background-color: rgba(255, 96, 96, 0.1);">@P&#243;ł Administrator</span> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">31-Jul-20 09:49 PM</span>
+
+            <div class="chatlog__message " data-message-id="738845784430215270" id="message-738845784430215270">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Lionelek#1076">@lionelek gombao</span> - awans 2x na 10@lvl - raport aktywności + praca w KO
+<span class="mention" title="Teciu#6435">@Randy</span> - awans na 900@lvl
+<span class="mention" title="Never#8670">@never</span> - minusik za aktywność
+<span class="mention" title="Talar#6704">@Talar</span> - degradacja na 300@lvl, ostatnia szansa, znasz układ
+<span class="mention" title="PRT#0001">@prt</span> - pierwszy negatywny raport, proszę się pilnować, bo kolejny będzie minus
+<span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span> - plusik
+<span class="mention" title="Patryk#1196">@doktor myszojeleń</span> - awans na młodszego admina
+<span class="mention" title="TymbarK#2758">@TymbarK</span> - plusik, wymieniam 2 plusy na 2P@lvl
+<span class="mention" title="Kolman#6410">@Kolman</span> - plusik, wymieniam 2 plusy na 2P@lvl
+<span class="mention" title="D3RIX#3946">@Smiting</span> - plusik
+<span class="mention" title="WIDELEC#1071">@WIDELEC</span> - plusik, wymieniam 2 plusy na 3P@lvl
+<span class="mention" title="xSeLeCTx#2517">@xSeLeCTx</span> - pierwszy negatywny raport, zgłaszałeś problemy techniczne, proszę wr&#243;cić na dobre tory! <span class="chatlog__edited-timestamp" title="02-Aug-20 09:16 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">31-Jul-20 11:23 PM</span>
+
+            <div class="chatlog__message " data-message-id="738869517685358663" id="message-738869517685358663">
+                <div class="chatlog__content">
+                    <div class="markdown">A i z miesięcznego raportu TOP3 - <span class="mention" title="Marysia#1382">@Marysia</span>, <span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span> oraz <span class="mention" title="Viperek#1638">@Viperek</span> otrzymują mrucoinsy. Ilość r&#243;wna miesięcznemu KP. Mrucznik Wam nada na konta. </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">02-Aug-20 11:44 AM</span>
+
+            <div class="chatlog__message " data-message-id="739418280414019643" id="message-739418280414019643">
+                <div class="chatlog__content">
+                    <div class="markdown">Od dzisiaj wszystkie zgody zostają anulowane. Jeśli ktoś chce uzyskać ją ponownie to ma się zgłosić do mnie po zgodę. Wnioskować można od administratora w g&#243;rę. vH@ nie dotyczy - sami pracujecie na swoje konto. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> 
+
+P.S Sandał nawet nie pisz <img class="emoji " alt="😛" title="😛" src="https://twemoji.maxcdn.com/2/72x72/1f61b.png"> <span class="chatlog__edited-timestamp" title="02-Aug-20 12:09 PM">(edited)</span></div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/679259505930010625/739418280283865128/unknown.png">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/679259505930010625/739418280283865128/unknown.png" alt="Attachment">
+                            </a>
+                    </div>
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">02-Aug-20 09:17 PM</span>
+
+            <div class="chatlog__message " data-message-id="739562584776245279" id="message-739562584776245279">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Krzaku#5904">@Krzaku</span> napisał ciekawy raport na temat używania czit&#243;w przez administrację. Gracz wstawił się za nim. Minus na konto. Bardzo ryzykowanie na 1P@lvl. Ostatnia szansa jak to m&#243;wią. </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/679259505930010625/739562584583307285/unknown.png">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/679259505930010625/739562584583307285/unknown.png" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/144517285699256320/a71bd8f299e71e80ae2f0fb57ebc52bf.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Mrucznik#3599" data-user-id="144517285699256320" style="color: rgb(173,20,87)">Mrucznik</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-20 12:55 AM</span>
+
+            <div class="chatlog__message " data-message-id="739617490229002310" id="message-739617490229002310">
+                <div class="chatlog__content">
+                    <div class="markdown">Ze względu na to, że dochodzą mnie słuchy o czitujących administratorach, od dzisiaj każdy kto użyje czit&#243;w na serwerze otrzyma natychmiastowy wylot z administracji bez względu na rangę. Jednocześnie zakazuje używania przez admin&#243;w jakichkolwiek czit&#243;w, chyba że dany administrator otrzyma pisemną zgodę ode mnie. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128566;" title="&#128566;" src="https://twemoji.maxcdn.com/2/72x72/1f636.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128518;" title="&#128518;" src="https://twemoji.maxcdn.com/2/72x72/1f606.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127485;" title="&#127485;" src="https://twemoji.maxcdn.com/2/72x72/1f1fd.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127465;" title="&#127465;" src="https://twemoji.maxcdn.com/2/72x72/1f1e9.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-20 04:19 PM</span>
+
+            <div class="chatlog__message " data-message-id="739849876493565954" id="message-739849876493565954">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Julia#5254">@Julia</span> &lt;3, <span class="mention" title="PRT#0001">@prt</span>, <span class="mention" title="Marysia#1382">@Marysia</span>, <span class="mention" title="Lionelek#1076">@lionelek gombao</span> proszę uzupełnić zgodnie z zasadami zawartymi w dziale administracji nick IC na slack. Pozdrawiam cieplutko </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-20 04:28 PM</span>
+
+            <div class="chatlog__message " data-message-id="739852265841623121" id="message-739852265841623121">
+                <div class="chatlog__content">
+                    <div class="markdown">Dorzucam linka: <a href="https://mrucznik-rp.pl/topic/27361-slack-dla-administracji/">https://mrucznik-rp.pl/topic/27361-slack-dla-administracji/</a> </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/202420520581332992/71b1e5ad2ab70ee11f0b218fa0e884a2.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Telehama#7031" data-user-id="202420520581332992" style="color: rgb(173,20,87)">Rudy 102</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-20 06:05 PM</span>
+
+            <div class="chatlog__message " data-message-id="739876507195015210" id="message-739876507195015210">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> proszę o nie nadawanie kar w postaci blockow za jakiś wymyślony wyrok przez LSPD. Od tego jest Sąd i tylko ta organizacja ma takie prawa. Jeśli chcą karać aresztem to niech grają skryptem. Jeśli dowiem się, że ktoś nadaje blocki bo LSPD chciało to będę prowadził rozmowy z Westem na temat kary bądź i nawet z całym Zarządem.  Pozdrawiam. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">7</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-20 06:06 PM</span>
+
+            <div class="chatlog__message " data-message-id="739876813223755797" id="message-739876813223755797">
+                <div class="chatlog__content">
+                    <div class="markdown">Potwierdzam. W ten spos&#243;b odcinacie jedną organizację od rozgrywki i powodujecie jej powolny upadek. Będę to traktował jako kara niezgodna z LKiZ. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">6</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">03-Aug-20 07:43 PM</span>
+
+            <div class="chatlog__message " data-message-id="739901334702260356" id="message-739901334702260356">
+                <div class="chatlog__content">
+                    <div class="markdown">Zapomniałem wcześniej ładnie ogłosić. <span class="mention" title="Patryk#1196">@doktor myszojeleń</span> - nowy młodszy administrator, wniosek akceptowany. </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128557;" title="&#128557;" src="https://twemoji.maxcdn.com/2/72x72/1f62d.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/385470216085438464/5f539e1561f90ed3dd02fd3c297bce3e.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="KaMiL#7642" data-user-id="385470216085438464" style="color: rgb(233,30,99)">ƘΔΜIL</span>
+
+
+        <span class="chatlog__timestamp">04-Aug-20 06:43 PM</span>
+
+            <div class="chatlog__message " data-message-id="740248654559969281" id="message-740248654559969281">
+                <div class="chatlog__content">
+                    <div class="markdown">Witam <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span>, 
+po przeanalizowaniu os&#243;b kt&#243;re zgłosiły chęć dołączenia do os&#243;b zajmujących się dotychczasowymi działaniami Komisji Sprawiedliwości oraz dyskusjach z <span class="mention" title="Daglas#2274">@Daglas</span> i <span class="mention" title="_West_#7641">@_West_</span> , przedstawiamy Wam listę czterech os&#243;b kt&#243;re będą wsp&#243;lnie ze mną i Daglasem sprawowały pieczę nad skargami i apelacjami.
+
+Dzięki za wszystkie zgłoszenia, pamiętajcie że zapewne prędzej czy p&#243;źniej dojdzie do sytuacji kiedy będziemy musieli przeprowadzić jakieś roszady w tejże ekipie, więc pewnie pojawi się jeszcze szansa dla każdego z Was. P02dr4w14my. : D
+
+
+ <strong>Rozpatrywanie apelacji</strong>
+<strong>-</strong> <span class="mention" title="Kru3ix#6973">@Kru3ix</span> 
+<strong>-</strong> <span class="mention" title="Patryk#1196">@doktor myszojeleń</span> 
+
+ <strong>Szykowanie i rozpatrywanie skarg:</strong>
+<strong>-</strong> <span class="mention" title="WIDELEC#1071">@WIDELEC</span> 
+<strong>-</strong> <span class="mention" title="Kolman#6410">@Kolman</span> <span class="chatlog__edited-timestamp" title="04-Aug-20 06:43 PM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">7</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128533;" title="&#128533;" src="https://twemoji.maxcdn.com/2/72x72/1f615.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">04-Aug-20 09:58 PM</span>
+
+            <div class="chatlog__message " data-message-id="740297708505661550" id="message-740297708505661550">
+                <div class="chatlog__content">
+                    <div class="markdown">Jak ktoś ma jakąś funkcję, kt&#243;ra nie jest związana z komisjami - np. Kru3ix fanpage to dajcie mi znać, bo nie wiem czy wszystko sobie zapisałem. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> <span class="chatlog__edited-timestamp" title="04-Aug-20 09:58 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">04-Aug-20 10:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="740300134373392488" id="message-740300134373392488">
+                <div class="chatlog__content">
+                    <div class="markdown">I jeszcze raz przypominam im większe g&#243;wno wylewacie w skargach na siebie tym gorzej dla Was i końcowego werdyktu <img class="emoji " alt="😛" title="😛" src="https://twemoji.maxcdn.com/2/72x72/1f61b.png"> <img class="emoji " alt="😄" title="😄" src="https://twemoji.maxcdn.com/2/72x72/1f604.png"> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128169;" title="&#128169;" src="https://twemoji.maxcdn.com/2/72x72/1f4a9.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">05-Aug-20 05:56 AM</span>
+
+            <div class="chatlog__message " data-message-id="740417926448021505" id="message-740417926448021505">
+                <div class="chatlog__content">
+                    <div class="markdown">Uzupełniamy po mału wszystkie zadania indywidualne. Poszukujemy jeszcze osoby, kt&#243;ra zajęłaby się eventami i wydarzeniami. Poszukujemy osoby kreatywnej, kt&#243;ra skupi się na rozgrywce IC! Ze statystyk wynika, że takie urozmaicenie najbardziej przyciąga graczy. Osoba na tym stanowisku to prawdziwy playmaker niczym Xavi i Iniesta w Barcelonie <img class="emoji " alt="😂" title="😂" src="https://twemoji.maxcdn.com/2/72x72/1f602.png"> Jeśli ktoś czuje się na siłach i chce przedstawić nam swoją wizję to piszcie do mnie i do <span class="mention" title="Telehama#7031">@Rudy 102</span>. Zaznaczamy jednak, że jeżeli nie znajdziemy tego czego szukamy to nie będziemy wybierać na siłę tylko otworzymy szybką rekrutację na p@ na to stanowisko. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> <span class="chatlog__edited-timestamp" title="05-Aug-20 05:57 AM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127881;" title="&#127881;" src="https://twemoji.maxcdn.com/2/72x72/1f389.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">05-Aug-20 08:43 PM</span>
+
+            <div class="chatlog__message " data-message-id="740641074044993587" id="message-740641074044993587">
+                <div class="chatlog__content">
+                    <div class="markdown">Witam chciałbym poinformować tych co nie wiedzą, że gdy łowca zabije gracza na kt&#243;rego ma zlecenie bez /poddajsie to otrzymamy na czacie stosowny komunikat! Nie musicie się domyślać czy to zrobił czy nie. Na podstawie skargi na Widelca proszę pamiętać, że łowca nie musi powtarzać swoją ofertę. Jeżeli zaoferuje poddanie się raz, a gracz z niej nie skorzysta (zacznie strzelać, zacznie uciekać) to następnym rozwiązaniem może być rozwiązanie siłowe. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> 
+Link dla zobrazowania: <a href="https://mrucznik-rp.pl/topic/97989-rskargap%25C3%25B3%25C5%2582-george_pagnotto/">https://mrucznik-rp.pl/topic/97989-rskargap%C3%B3%C5%82-george_pagnotto/</a> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">3</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">06-Aug-20 10:34 AM</span>
+
+            <div class="chatlog__message " data-message-id="740850349451116584" id="message-740850349451116584">
+                <div class="chatlog__content">
+                    <div class="markdown">Mrucoinsy za top3  za lipiec nadane. Jakby ktoś nie miał to piszcie <span class="mention" title="Viperek#1638">@Viperek</span> <span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span> <span class="mention" title="Marysia#1382">@Marysia</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">2</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">06-Aug-20 08:38 PM</span>
+
+            <div class="chatlog__message " data-message-id="741002399392727061" id="message-741002399392727061">
+                <div class="chatlog__content">
+                    <div class="markdown">Nowe kartoteki pobierają avatar ze slacka, więc jeśli ktoś chce mieć ładny to niech tam sobie ustawi <img class="emoji " alt="😄" title="😄" src="https://twemoji.maxcdn.com/2/72x72/1f604.png"> <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128514;" title="&#128514;" src="https://twemoji.maxcdn.com/2/72x72/1f602.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">07-Aug-20 05:40 PM</span>
+
+            <div class="chatlog__message " data-message-id="741319879021559968" id="message-741319879021559968">
+                <div class="chatlog__content">
+                    <div class="markdown">Raporty administracyjne będą brane z okres&#243;w piątek 21:00 - piątek 21:00 począwszy od tego tygodnia. Mogę wrzucać p&#243;źniej, ale danę będę odczytywał na godzinę 21:00. Ustalam stałą godzinę, ponieważ potem są pretensje, że KTOŚ MIAŁ GODZINĘ WIĘCEJ I NABIŁ 7H. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span>
+
+P.S Proszę pamiętać, żeby po tej 21:00 zejść z /aduty i system zdążył to przetworzyć. Nie polecam na ostatnią chwilę <img class="emoji " alt="😛" title="😛" src="https://twemoji.maxcdn.com/2/72x72/1f61b.png"> <span class="chatlog__edited-timestamp" title="07-Aug-20 05:43 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">07-Aug-20 09:57 PM</span>
+
+            <div class="chatlog__message " data-message-id="741384521844523170" id="message-741384521844523170">
+                <div class="chatlog__content">
+                    <div class="markdown"><a href="https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&comment=1050208">https://mrucznik-rp.pl/topic/29151-raporty-administracyjne/?do=findComment&amp;comment=1050208</a>
+<a href="https://mrucznik-rp.pl/topic/64992-p-podsumowania/page/2/#comments">https://mrucznik-rp.pl/topic/64992-p-podsumowania/page/2/#comments</a>
+<span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> </div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="741384812236898375" id="message-741384812236898375">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="Patryk#1196">@doktor myszojeleń</span>  - awans na 10@lvl za raport + pomoc przy redagowaniu temat&#243;w
+<span class="mention" title="Teciu#6435">@Randy</span> - awans na 1000@lvl
+<span class="mention" title="Lionelek#1076">@lionelek gombao</span> - awans na 20@lvl
+<span class="mention" title="Marysia#1382">@Marysia</span> - awans na 5@lvl
+<span class="mention" title="Never#8670">@never</span> - awans na 30@lvl
+<span class="mention" title="PRT#0001">@prt</span> - awans na 70@lvl (podciągnięte, za tydzień 8h)
+<span class="mention" title="Talar#6704">@Talar</span> - podciągnąłem 3 minutki <img class="emoji " alt="😛" title="😛" src="https://twemoji.maxcdn.com/2/72x72/1f61b.png"> Pamiętaj o umowie. Neutralnie
+<span class="mention" title="Konio#1764">@Konio | Marcello Acevedo</span> - plus, wymieniam na powr&#243;t na 3P@lvl
+<span class="mention" title="WIDELEC#1071">@WIDELEC</span> - plusik
+<span class="mention" title="TymbarK#2758">@TymbarK</span> - plusik
+<span class="mention" title="D3RIX#3946">@Smiting</span> - wniosek o awans na M@
+<span class="mention" title="xSeLeCTx#2517">@xSeLeCTx</span> - plusik, wymieniam 2 plusy na 2P@lvl (podciągnięte, za tydzień 8h)
+<span class="mention" title="Kru3ix#6973">@Kru3ix</span> - podciągnąłem, bo zebrałeś dobrą za pracę nad fb <img class="emoji " alt="😛" title="😛" src="https://twemoji.maxcdn.com/2/72x72/1f61b.png">. Neutralnie </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">9</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128049;" title="&#128049;" src="https://twemoji.maxcdn.com/2/72x72/1f431.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">09-Aug-20 12:45 PM</span>
+
+            <div class="chatlog__message " data-message-id="741970373725257759" id="message-741970373725257759">
+                <div class="chatlog__content">
+                    <div class="markdown"><span class="mention" title="TymbarK#2758">@TymbarK</span> - plusik z pochwały, wymieniam 2 plusy na 3P@lvl </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">09-Aug-20 02:03 PM</span>
+
+            <div class="chatlog__message " data-message-id="741990099411271731" id="message-741990099411271731">
+                <div class="chatlog__content">
+                    <div class="markdown">Wszystkie awanse od 01.08 są liczone na nowy system. Daję Wam wyższy @lvl, ale każdy raport traktuje już jako plusik w nowym systemie pod daną grupą, do kt&#243;rej zostaliście przydzieleni. Kiedy na serwerze to będzie? Pytajcie <span class="mention" title="Laiz#0524">@Sandał</span>, podobno zaczął <img class="emoji " alt="😄" title="😄" src="https://twemoji.maxcdn.com/2/72x72/1f604.png"> </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="741990400213909585" id="message-741990400213909585">
+                <div class="chatlog__content">
+                    <div class="markdown">Jeszcze takie info odnośnie minus&#243;w. Będą one kasowały się automatycznie.
+P@ - minus kasuje się dopiero po awansie na M@
+M@, @ oraz S@ - minus kasuje się przy awansie na wyższy level w danej grupie administracyjnej. 
+Oznacza to, że minusiki będą pojawiać się częściej i będzie to mniej znacząca kara niż obecnie. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> <span class="chatlog__edited-timestamp" title="09-Aug-20 02:05 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">09-Aug-20 06:47 PM</span>
+
+            <div class="chatlog__message " data-message-id="742061506702737458" id="message-742061506702737458">
+                <div class="chatlog__content">
+                    <div class="markdown">Witam, zaczynamy wpuszczać do nowych kartotek. Tutaj link do rejestracji! Koniecznie z niego! <a href="https://coda.io/?r=W3NpetQVSha5CKlnH5efWg">https://coda.io/?r=W3NpetQVSha5CKlnH5efWg</a> <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> <span class="mention" style="color: rgb(173, 20, 87); background-color: rgba(173, 20, 87, 0.1);">@Zarząd</span> </div>
+                </div>
+
+
+                    <div class="chatlog__embed">
+                            <div class="chatlog__embed-color-pill" style="background-color: rgba(244,106,84,255)"></div>
+
+                        <div class="chatlog__embed-content-container">
+                            <div class="chatlog__embed-content">
+                                <div class="chatlog__embed-text">
+
+                                        <div class="chatlog__embed-title">
+                                                <a class="chatlog__embed-title-link" href="https://coda.io/?r=W3NpetQVSha5CKlnH5efWg">
+                                                    <div class="markdown">Coda | A new doc for teams.</div>
+                                                </a>
+                                        </div>
+
+                                        <div class="chatlog__embed-description">
+                                            <div class="markdown">Coda is an all-in-one doc that brings words, data, and teams together. Join the party, get a $10 credit on sign up</div>
+                                        </div>
+
+                                </div>
+
+                                    <div class="chatlog__embed-thumbnail-container">
+                                        <a class="chatlog__embed-thumbnail-link" href="https://cdn.coda.io/external/img/oembed_referral.png">
+                                            <img class="chatlog__embed-thumbnail" src="https://cdn.coda.io/external/img/oembed_referral.png" alt="Thumbnail">
+                                        </a>
+                                    </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="❤️" title="❤️" src="https://twemoji.maxcdn.com/2/72x72/2764.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+            <div class="chatlog__message " data-message-id="742061511127597077" id="message-742061511127597077">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/679259505930010625/742061510574080060/unknown.png">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/679259505930010625/742061510574080060/unknown.png" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="742061581806075934" id="message-742061581806075934">
+                <div class="chatlog__content">
+                    <div class="markdown">Proszę następnie wysłać mi maila na PW, najlepiej żeby był identyczny ze slackiem! </div>
+                </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">10-Aug-20 09:54 AM</span>
+
+            <div class="chatlog__message " data-message-id="742289701397987358" id="message-742289701397987358">
+                <div class="chatlog__content">
+                    <div class="markdown">Dział P@ i @ został połączony. Tematy i kartoteki zostały na razie przerzucone. Będę tam robił porządki i pojawi się og&#243;lny temat z podstawowymi informacjami dla administracji. Proszę o wyrozumiałość. Do końca tygodnia będzie cacy. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> <span class="chatlog__edited-timestamp" title="10-Aug-20 09:54 AM">(edited)</span></div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#128077;" title="&#128077;" src="https://twemoji.maxcdn.com/2/72x72/1f44d.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+<div class="chatlog__message-group">
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="https://cdn.discordapp.com/avatars/463816072554872843/de94ae72227b3c338d854b4545d411ea.png" alt="Avatar">
+    </div>
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="_West_#7641" data-user-id="463816072554872843" style="color: rgb(52,152,219)">_West_</span>
+
+
+        <span class="chatlog__timestamp">12-Aug-20 04:18 PM</span>
+
+            <div class="chatlog__message " data-message-id="743111115105632276" id="message-743111115105632276">
+                <div class="chatlog__content">
+                    <div class="markdown">Przypominam o wysyłaniu maila, aby uzyskać dostęp do kartotek. Wszystkie wpisy od najbliższego raportu będą pojawiać się już tam. <span class="mention" style="color: rgb(151, 156, 159); background-color: rgba(151, 156, 159, 0.1);">@Zwierzaki</span> <span class="chatlog__edited-timestamp" title="12-Aug-20 04:18 PM">(edited)</span></div>
+                </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="743112227212755096" id="message-743112227212755096">
+                <div class="chatlog__content">
+                    <div class="markdown"> </div>
+                </div>
+
+                    <div class="chatlog__attachment">
+                            <a href="https://cdn.discordapp.com/attachments/679259505930010625/743112226990325770/unknown.png">
+                                    <img class="chatlog__attachment-thumbnail" src="https://cdn.discordapp.com/attachments/679259505930010625/743112226990325770/unknown.png" alt="Attachment">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="743112256526745610" id="message-743112256526745610">
+                <div class="chatlog__content">
+                    <div class="markdown">Sory <span class="mention" title="Quiks#7844">@Quiks</span>, że akurat na Tobie xd </div>
+                </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127485;" title="&#127485;" src="https://twemoji.maxcdn.com/2/72x72/1f1fd.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                            <div class="chatlog__reaction">
+                                <img class="emoji emoji--small" alt="&#127465;" title="&#127465;" src="https://twemoji.maxcdn.com/2/72x72/1f1e9.png">
+                                <span class="chatlog__reaction-count">1</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 62 message(s)</div>
+</div>
+
+</body>
+</html>
