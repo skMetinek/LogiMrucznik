@@ -22,8 +22,5 @@ body{
     float: left;
 }
 #inne{
-    float: right;
-}
-#stopka{
     clear: both;
 }
