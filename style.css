@@ -3,7 +3,9 @@ img{
     height: auto;
 }
 body{
-    background-color: grey;
+    background-color: #161616;
+    font-family: 'Roboto', sans-serif;
+    color:white
 }
 .center {
     display: block;
@@ -11,6 +13,12 @@ body{
     margin-right: auto;
     max-width: 100%; 
     height: auto;
+}
+a:hover{
+    color:white
+}
+a{
+    color:crimson;
 }
 #frakcyjne{
     float: left;
